@@ -15,7 +15,7 @@ export const swal = (icon, msg) => {
 }
 
 
-export const swartAlert = async(titleReq, text = "Los cambios seran irreversibles!") => {
+export const swartAlert = async(titleReq, text = "Los cambios seran irreversibles!", textBtnEliminar = 'Si, Eliminar!') => {
 
     const {isConfirmed} = await Swal.fire({
         title: titleReq,
@@ -24,7 +24,7 @@ export const swartAlert = async(titleReq, text = "Los cambios seran irreversible
         showCancelButton: true,
         confirmButtonColor: '#f97316',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, Eliminar!',
+        confirmButtonText: textBtnEliminar,
         background: "#141414",
         color: "#fff",
       });

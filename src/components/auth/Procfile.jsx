@@ -51,7 +51,7 @@ export const Procfile = () => {
             <div
               onMouseOut={hoverLeavePhotoURL}
               onMouseOver={hoverEnterPhotoURL}
-              className={`absolute top-0 w-52 h-52 rounded-full z-1 object-cover ${hidden} justify-center flex-col items-center cursor-pointer`}
+              className={`relative bottom-[210px] w-52 h-52 rounded-full z-1 object-cover ${hidden} justify-center flex-col items-center cursor-pointer`}
             >
               <input
                 type="file"

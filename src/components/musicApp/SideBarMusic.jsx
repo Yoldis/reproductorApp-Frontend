@@ -24,7 +24,8 @@ export const SideBarMusic = () => {
     if(lodingMusic) return;
     const titleReq = 'Desea cerrar sesion?';
     const text = 'Vuelve Pronto!';
-    const isConfirmed = await swartAlert(titleReq, text);
+    const textBtnEliminar = 'Cerrar sesion'
+    const isConfirmed = await swartAlert(titleReq, text, textBtnEliminar);
     if(isConfirmed){
       startLogoutSign();
       stopAudio();
@@ -60,7 +61,16 @@ export const SideBarMusic = () => {
           </h3>
         </div>
 
-
+        <div
+          onClick={goHomeMusic}
+          className="flex items-center text-white rounded-md bg-secundary px-1 py-2  cursor-pointer transition-all duration-300 hover:opacity-80 shadow-md "
+        >
+          <FaMusic className="m-auto text-xl" />
+          <p className={`text-center w-3/4 font-semibold ${!sideBar ? 'hidden' : 'md:block' }`}>
+            Música
+          </p>
+        </div>
+        
         <label htmlFor="music">
           <div className="flex items-center text-white rounded-md bg-secundary p-1  cursor-pointer transition-all duration-300 hover:opacity-80 shadow-md ">
             <input
@@ -79,16 +89,6 @@ export const SideBarMusic = () => {
             </p>
           </div>
         </label>
-
-        <div
-          onClick={goHomeMusic}
-          className="flex items-center text-white rounded-md bg-secundary px-1 py-2  cursor-pointer transition-all duration-300 hover:opacity-80 shadow-md "
-        >
-          <FaMusic className="m-auto text-xl" />
-          <p className={`text-center w-3/4 font-semibold ${!sideBar ? 'hidden' : 'md:block' }`}>
-            Música
-          </p>
-        </div>
 
         
         <div

@@ -55,7 +55,6 @@ const MusicItem = ({music, index}) => {
         onMouseOver={() => onShowBtnDeleteMusic(uid)}
       >
         <div
-          onTouchEnd={() => playMusic(music)}
           onDoubleClick={() => playMusic(music)}
           className="text-neutral-200 w-[97%] items-center py-0.5 grid md:gap-0 md:grid-cols-2"
         >

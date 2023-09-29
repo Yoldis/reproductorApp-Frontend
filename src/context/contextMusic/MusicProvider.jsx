@@ -176,8 +176,9 @@ const startUpdateFavoritoMusic = async(id) => {
     if(m.uid === data.uid) return data;
     return{...m};
   })
+
   setMusic(update);
-  if(currentMuic.audio) setCurrentMuic({...currentMuic, ...data});
+  if(currentMuic.audio && data.nombre === currentMuic.nombre ) setCurrentMuic({...currentMuic, ...data});
 }
 
 useEffect(() => {
