@@ -79,17 +79,17 @@ export const Procfile = () => {
         </div>
       </div>
 
-      <section className="ml-3 mt-10 mb-[80px]">
+      <section className="mt-10 mb-[80px]">
         <header className="flex flex-wrap gap-2">
-          <h1 className="text-secundary font-semibold md:text-3xl text-lg">
+          <h1 className="ml-2 text-secundary font-semibold md:text-3xl text-lg">
             Musica que te gustan!
           </h1>
           <AiFillHeart className="text-secundary font-semibold md:text-3xl text-lg md:self-end self-center" />
         </header>
 
         <div className="cursor-default md:mb-0 mt-5 mb-[140px] ">
-          <div className="text-secundary font-medium md:grid grid-cols-[35px_2fr_1fr_35px_1fr] my-4 p-2 border-b border-neutral-200 w-full hidden">
-            <h2>#</h2>
+          <div className="text-secundary font-medium md:grid grid-cols-[45px_2fr_1fr_45px_1fr] my-4 p-2 border-b border-neutral-200 w-full hidden">
+            <h2 className='ml-2'>#</h2>
             <h2>Titulo</h2>
             <h2>Fecha en que se añadio</h2>
             <h2></h2>
