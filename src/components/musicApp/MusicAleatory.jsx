@@ -11,7 +11,7 @@ export const MusicAleatory = () => {
   return (
     <div className="overflow-auto h-screen animate__animated animate__fadeIn">
        <div className="fixed w-full z-10" style={{background: 'linear-gradient(to top, #434343, #000000)'}}>
-          <h1 className=" md:text-4xl text-2xl ml-5 md:ml-10 my-5 font-bold text-white">Cola</h1>
+          <h1 className=" md:text-4xl text-xl md:ml-10 ml-3 my-5 font-bold text-white">Cola</h1>
       </div>
 
       <div className="md:mb-28 md:mt-[90px] mt-[80px] mb-48" >

@@ -11,7 +11,7 @@ export const Music = () => {
   return (
     <div className={`animate__animated animate__fadeIn overflow-auto h-screen select-none`}>
     <div className="fixed w-full z-10 overflow-x-hidden" style={{background: 'linear-gradient(to top, #434343, #000000)'}}>
-          <h1 className=" md:text-4xl text-xl  md:ml-10 my-5 font-bold text-white">Lista de Reproducción</h1>
+          <h1 className=" md:text-4xl text-xl  md:ml-10 ml-3 my-5 font-bold text-white">Lista de Reproducción</h1>
       </div>  
 
       <div className="cursor-default md:mb-28  md:mt-[90px] mt-[80px] mb-48" >
