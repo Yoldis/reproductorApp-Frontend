@@ -123,7 +123,7 @@ const MusicasFavoritas = ({music, index}) => {
           selectMusic === uid
             ? "bg-black/20 hover:bg-black/20"
             : "bg-transparent"
-        } px-2 my-2 hover:bg-black/20 cursor-pointer transition-all duration-200 rounded-md animate__animated animate__fadeIn md:text-base text-sm`}
+        } px-2 m-2 hover:bg-black/20 cursor-pointer transition-all duration-200 rounded-md animate__animated animate__fadeIn md:text-base text-sm`}
         onMouseOut={() => onShowBtnDeleteMusic()}
         onMouseOver={() => onShowBtnDeleteMusic(uid)}
       >

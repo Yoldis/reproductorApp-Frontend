@@ -11,13 +11,13 @@ export const Music = () => {
   return (
     <div className={`animate__animated animate__fadeIn overflow-auto h-screen select-none`}>
     <div className="fixed w-full z-10 overflow-x-hidden" style={{background: 'linear-gradient(to top, #434343, #000000)'}}>
-          <h1 className=" md:text-4xl text-xl  ml-5 md:ml-10 my-5 font-bold text-white">Lista de Reproducción</h1>
+          <h1 className=" md:text-4xl text-xl  md:ml-10 my-5 font-bold text-white">Lista de Reproducción</h1>
       </div>  
 
-      <div className="cursor-default md:mb-28 mx-3 md:mt-[90px] mt-[80px] mb-48" >
-      <header className="text-secundary font-medium md:flex items-center my-4 p-2 border-b border-neutral-200 w-full hidden">
-        <h2 className="w-[40px]">#</h2>
-        <h2 className="w-[45%]">Titulo</h2>
+      <div className="cursor-default md:mb-28  md:mt-[90px] mt-[80px] mb-48" >
+      <header className="text-secundary font-medium md:flex items-center my-4 p-2 border-b border-neutral-200 hidden">
+        <h2 className="ml-2 w-[40px]">#</h2>
+        <h2 className="w-[44%]">Titulo</h2>
         <h2 className="w-[22%]">Fecha en que se añadio</h2>
         <h2></h2>
         <h2>Duración</h2>
@@ -50,7 +50,7 @@ const MusicItem = ({music, index}) => {
           selectMusic === uid
             ? "bg-black/20 hover:bg-black/20"
             : "bg-transparent"
-        } px-2 my-2 hover:bg-black/20 cursor-pointer transition-all duration-200 rounded-md animate__animated animate__fadeIn md:text-base text-sm flex items-center`}
+        } px-2 m-2 hover:bg-black/20 cursor-pointer transition-all duration-200 rounded-md animate__animated animate__fadeIn md:text-base text-sm flex items-center`}
         onMouseOut={() => onShowBtnDeleteMusic()}
         onMouseOver={() => onShowBtnDeleteMusic(uid)}
       >

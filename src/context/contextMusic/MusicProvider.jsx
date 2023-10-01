@@ -152,15 +152,16 @@ export const MusicProvider = ({children}) => {
   }
   // ACTIVAR MODO ALEATORIO
   const aleatoryMusic = () => {
-    if(activeRandomMusic){
-      setActiveRandomMusic(false);
-    }
-    else{
-      const getRandonMusic = getAleatoryMusic(music);
-      setMusicAleatory(getRandonMusic);
-      setActiveRandomMusic(true);
-    }
+    activeRandomMusic ? setActiveRandomMusic(false) : setActiveRandomMusic(true);
   }
+
+  useEffect(() => {
+    if(activeRandomMusic){
+      const aleatory = getAleatoryMusic(music);
+      setMusicAleatory(aleatory);
+  }
+  }, [activeRandomMusic]);
+
 
   // AGREGAR MUSICA A FAVORITOS
 const startUpdateFavoritoMusic = async(id) => {
@@ -177,7 +178,13 @@ const startUpdateFavoritoMusic = async(id) => {
     return{...m};
   })
 
+  const updateAleatory = musicAleatory.map(m => {
+    if(m.uid === data.uid) return data;
+    return{...m};
+  })
+
   setMusic(update);
+  setMusicAleatory(updateAleatory);
   if(currentMuic.audio && data.nombre === currentMuic.nombre ) setCurrentMuic({...currentMuic, ...data});
 }
 
@@ -464,7 +471,6 @@ useEffect(() => {
         setactiveMutedVolumen,
         setProgressBarVolumen,
         setMusicAleatory,
-        getAleatoryMusic,
 
         icon1,
         icon2,
@@ -476,7 +482,8 @@ useEffect(() => {
         setProgressBar,
         setActiveRandomMusic,
         setActiveRepeatMusic,
-        setDuracionActual
+        setDuracionActual,
+        getAleatoryMusic
       }}
     >
       {children}

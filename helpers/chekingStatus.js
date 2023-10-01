@@ -7,7 +7,7 @@ import { getMusic, getMusicaActual } from "../api/musicApp/musicProvider";
 export const chekingUser = () => {
 
     const {user, setUser, chekingAuth} = useContext(authContext);
-    const{setMusic, setlodingMusic, setCurrentMuic, setCurrentTime, setProgressBar, setActiveRandomMusic,
+    const{ setMusic, setlodingMusic, setCurrentMuic, setCurrentTime, setProgressBar, setActiveRandomMusic,
         setActiveRepeatMusic,setUidMusic, setDuracionActual, setMusicFavorite} = useContext(musicContext);
     
     useEffect(() => {
