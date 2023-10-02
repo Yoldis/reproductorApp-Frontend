@@ -26,30 +26,33 @@ export const chekingUser = () => {
             }
 
             const res2 = await getMusicaActual(user.uid);
+            console.log(res2)
             if(res2.ok){
                 
-                const audio = new Audio(res2.data.url);
-                audio.currentTime = res2.minutoActual;
-                audio.loop = res2.repetir;
-                
-                
-                audio.addEventListener('timeupdate', () => {
-
-                    setDuracionActual(audio.currentTime);
-                    const duration = (audio.currentTime / 60);
-                    const minutes = String(duration).split('.')[0];
-                    let seconds =  String((Number('0.' + String(duration).split('.')[1]) * 60)).split('.')[0];
-                    isNaN(seconds) ? seconds = '00' : seconds.length === 1 ? seconds = '0' + seconds : seconds;
+                if(res2.data){
+                    const audio = new Audio(res2.data.url);
+                    audio.currentTime = res2.minutoActual;
+                    audio.loop = res2.repetir;
                     
-                    let porcent = (audio.currentTime / audio.duration) * 100;
-                    setProgressBar(porcent);
-                    setCurrentTime(`${minutes}:${seconds}`);
-                });
-
-                setUidMusic(res2.data.uid);
-                setCurrentMuic({audio:audio, ...res2.data});
-                setActiveRandomMusic(res2.random);
-                setActiveRepeatMusic(res2.repetir);
+                    
+                    audio.addEventListener('timeupdate', () => {
+    
+                        setDuracionActual(audio.currentTime);
+                        const duration = (audio.currentTime / 60);
+                        const minutes = String(duration).split('.')[0];
+                        let seconds =  String((Number('0.' + String(duration).split('.')[1]) * 60)).split('.')[0];
+                        isNaN(seconds) ? seconds = '00' : seconds.length === 1 ? seconds = '0' + seconds : seconds;
+                        
+                        let porcent = (audio.currentTime / audio.duration) * 100;
+                        setProgressBar(porcent);
+                        setCurrentTime(`${minutes}:${seconds}`);
+                    });
+    
+                    setUidMusic(res2.data.uid);
+                    setCurrentMuic({audio:audio, ...res2.data});
+                    setActiveRandomMusic(res2.random);
+                    setActiveRepeatMusic(res2.repetir);
+                }
             }
             
             setlodingMusic(false);
