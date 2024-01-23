@@ -4,6 +4,7 @@ import { FaTrash } from "react-icons/fa";
 import { AiFillEdit, AiFillHeart, AiOutlineHeart, AiOutlineReload } from "react-icons/ai";
 import { LoadingAnimation } from "../../router/LoadingAnimation";
 import { BsMusicNote } from "react-icons/bs";
+import { Audio } from "react-loader-spinner";
 
 export const MusicAleatory = () => {
     const{musicAleatory, activeRandomMusic, music, lodingMusic } = useContext(musicContext);
@@ -65,20 +66,20 @@ const MusicAleatoryItem = ({music, index}) => {
       >
         <div className="flex gap-1 items-center">
           <div className="w-[40px]">
-            {uidMusic === uid ? (
-              <ul className="grid grid-cols-3 relative right-1.5">
-                <BsMusicNote
-                  className={`${play && icon1} text-secundary text-sm`}
-                />
-                <BsMusicNote
-                  className={`${play && icon2} text-secundary text-sm`}
-                />
-                <BsMusicNote
-                  className={`${play && icon3} text-secundary text-sm`}
-                />
+            {uidMusic === uid && play ? (
+              <ul className="relative right-1.5 animate__animated animate__fadeIn">
+                <Audio
+                    height="25"
+                    width="25"
+                    color="#f97316"
+                    ariaLabel="audio-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="wrapper-class"
+                    visible={true}
+                  />
               </ul>
             ) : (
-              <p className="">{index}</p>
+              <p className={`${uidMusic === uid ? 'text-secundary' : 'text-white/95' } font-medium animate__animated animate__fadeIn`}>{index}</p>
             )}
           </div>
 
