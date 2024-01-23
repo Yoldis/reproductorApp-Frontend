@@ -60,7 +60,7 @@ const MusicItem = ({music, index}) => {
           <div className="flex gap-1 items-center">
             <div className="w-[40px]">
               {uidMusic === uid && play ? (
-                <ul className="relative right-1.5">
+                <ul className="relative right-1.5 animate__animated animate__fadeIn">
                   <Audio
                     height="25"
                     width="25"
@@ -72,7 +72,7 @@ const MusicItem = ({music, index}) => {
                   />
                 </ul>
               ) : (
-                <p className="">{index}</p>
+                <p className={`${uidMusic === uid ? 'text-secundary' : 'text-white/95' } font-medium animate__animated animate__fadeIn`}>{index}</p>
               )}
             </div>
 
