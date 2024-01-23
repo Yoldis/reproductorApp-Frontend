@@ -3,6 +3,7 @@ import { musicContext } from "../../context/useContext"
 import { LoadingAnimation } from "../../router/LoadingAnimation";
 import { FaTrash } from "react-icons/fa";
 import { AiFillHeart, AiOutlineHeart, BsMusicNote } from "react-icons/all";
+import { Audio } from "react-loader-spinner";
 
 
 export const Music = () => {
@@ -39,9 +40,7 @@ export const Music = () => {
 
 const MusicItem = ({music, index}) => {
     const{nombre, favorito, uid, img, fecha, duracion} = music;
-        const{playMusic, uidMusic, onSelectClickMusic, selectMusic, showBtnDeleteMusic, onShowBtnDeleteMusic, startDeleteOneMusicDB,  startUpdateFavoritoMusic, play, icon1, icon2, icon3, } = useContext(musicContext);
-  
-        // ${uidMusic === uid ? "bg-black/20" : "bg-transparent"}
+        const{playMusic, uidMusic, onSelectClickMusic, selectMusic, showBtnDeleteMusic, onShowBtnDeleteMusic, startDeleteOneMusicDB,  startUpdateFavoritoMusic, play } = useContext(musicContext);
   
     return (
       <div
@@ -60,16 +59,16 @@ const MusicItem = ({music, index}) => {
         >
           <div className="flex gap-1 items-center">
             <div className="w-[40px]">
-              {uidMusic === uid ? (
-                <ul className="grid grid-cols-3 relative right-1.5">
-                  <BsMusicNote
-                    className={`${play && icon1} text-secundary text-sm`}
-                  />
-                  <BsMusicNote
-                    className={`${play && icon2} text-secundary text-sm`}
-                  />
-                  <BsMusicNote
-                    className={`${play && icon3} text-secundary text-sm`}
+              {uidMusic === uid && play ? (
+                <ul className="relative right-1.5">
+                  <Audio
+                    height="25"
+                    width="25"
+                    color="#f97316"
+                    ariaLabel="audio-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="wrapper-class"
+                    visible={true}
                   />
                 </ul>
               ) : (

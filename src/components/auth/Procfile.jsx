@@ -4,6 +4,7 @@ import { authContext, musicContext } from "../../context/useContext";
 import { AiFillHeart } from "react-icons/ai";
 import { LoadingAnimation } from "../../router/LoadingAnimation";
 import { BsMusicNote } from "react-icons/bs";
+import { Audio } from "react-loader-spinner";
 
 export const Procfile = () => {
 
@@ -81,7 +82,7 @@ export const Procfile = () => {
 
       <section className="mt-10 mb-[80px]">
         <header className="flex flex-wrap gap-2">
-          <h1 className="ml-2 text-secundary font-semibold md:text-3xl text-lg">
+          <h1 className="ml-2 text-secundary font-bold md:text-3xl text-lg">
             Musica que te gustan!
           </h1>
           <AiFillHeart className="text-secundary font-semibold md:text-3xl text-lg md:self-end self-center" />
@@ -114,7 +115,7 @@ export const Procfile = () => {
 
 const MusicasFavoritas = ({music, index}) => {
   const{nombre, uid, img, fecha, duracion} = music;
-  const{playMusic, uidMusic, onSelectClickMusic, onShowBtnDeleteMusic, selectMusic, play, icon1, icon2, icon3, } = useContext(musicContext);
+  const{playMusic, uidMusic, onSelectClickMusic, onShowBtnDeleteMusic, selectMusic, play } = useContext(musicContext);
   return (
     <div
         onDoubleClick={() => playMusic(music)}
@@ -130,16 +131,16 @@ const MusicasFavoritas = ({music, index}) => {
         <div className="text-neutral-200 w-full items-center py-0.5 grid md:gap-0 md:grid-cols-2">
           <div className="flex gap-1 items-center">
             <div className="w-[40px]">
-              {uidMusic === uid ? (
-                <ul className="grid grid-cols-3 relative right-1.5">
-                  <BsMusicNote
-                    className={`${play && icon1} text-secundary text-sm`}
-                  />
-                  <BsMusicNote
-                    className={`${play && icon2} text-secundary text-sm`}
-                  />
-                  <BsMusicNote
-                    className={`${play && icon3} text-secundary text-sm`}
+              {uidMusic === uid && play ? (
+                <ul className="relative right-1.5">
+                   <Audio
+                    height="25"
+                    width="25"
+                    color="#f97316"
+                    ariaLabel="audio-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="wrapper-class"
+                    visible={true}
                   />
                 </ul>
               ) : (
